@@ -3,16 +3,23 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "server/index.js",
   "scripts": {
-    "dev": "vite",
+    "dev:frontend": "vite",
+    "dev:backend": "nodemon server/index.js",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
     "vue": "^3.5.10"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
+    "concurrently": "^9.0.1",
+    "nodemon": "^3.1.7",
     "vite": "^5.4.8"
   }
 }
